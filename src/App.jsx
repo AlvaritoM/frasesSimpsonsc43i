@@ -30,8 +30,10 @@ function App() {
     <>
       <Container className="text-center my-5">
         <img src={logo} alt="Logo de los simpson" className="w-50" />
-        <Frase></Frase>
-        <Button variant="warning">Obtener frase</Button>
+        <Frase datosPersonaje={personaje}></Frase>
+        <Button onClick={consultarApi} variant="warning">
+          Obtener frase
+        </Button>
       </Container>
     </>
   );
