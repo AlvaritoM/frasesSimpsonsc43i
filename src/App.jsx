@@ -10,11 +10,17 @@ function App() {
     consultarApi();
   }, []);
 
-  const consultarApi = () => {
+  const consultarApi = async () => {
     try {
       //codigo que quiero ejecutar que puede que falle el servidor o algo
-      const respuesta = fetch("https://thesimpsonsquoteapi.glitch.me/quotes");
+      const respuesta = await fetch(
+        "https://thesimpsonsquoteapi.glitch.me/quotes"
+      );
+      const dato = await respuesta.json();
+
       console.log(respuesta);
+      console.log(dato[0]);
+      setPersonaje(dato[0]);
     } catch (error) {
       console.log(error);
     }
